@@ -154,58 +154,60 @@ export default function NoteComposer() {
         </div>
 
         {/* Editor Area */}
-        <motion.div layout className="relative">
-          <AnimatePresence mode="wait">
-            {activeTab === "write" && (
-              <motion.div
-                key="write"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.2 }}
-                className="max-w-3xl mx-auto"
-              >
-                <TextEditor ref={textEditorRef} />
-              </motion.div>
-            )}
+        <div className="relative">
+          {/* Write tab */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{
+              opacity: activeTab === "write" ? 1 : 0,
+              x: activeTab === "write" ? 0 : -20,
+            }}
+            transition={{ duration: 0.2 }}
+            className={`max-w-3xl mx-auto ${
+              activeTab !== "write" ? "hidden" : ""
+            }`}
+          >
+            <TextEditor ref={textEditorRef} />
+          </motion.div>
 
-            {activeTab === "draw" && (
-              <motion.div
-                key="draw"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.2 }}
-                className="relative"
-                onMouseEnter={() => setIsCanvasHovered(true)}
-                onMouseLeave={() => setIsCanvasHovered(false)}
-              >
-                <div
-                  className={`h-[500px] md:h-[600px] rounded-xl overflow-hidden border transition-all duration-300 ${
-                    isCanvasHovered
-                      ? "border-accent-coral/60 shadow-[0_0_40px_rgba(255,107,107,0.25),0_0_80px_rgba(255,107,107,0.1)]"
-                      : "border-glass-border"
-                  }`}
+          {/* Draw tab - always mounted, hidden when inactive */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{
+              opacity: activeTab === "draw" ? 1 : 0,
+              x: activeTab === "draw" ? 0 : 20,
+            }}
+            transition={{ duration: 0.2 }}
+            className={`relative ${
+              activeTab !== "draw" ? "hidden" : ""
+            }`}
+            onMouseEnter={() => setIsCanvasHovered(true)}
+            onMouseLeave={() => setIsCanvasHovered(false)}
+          >
+            <div
+              className={`h-[500px] md:h-[600px] rounded-xl overflow-hidden border transition-all duration-300 ${
+                isCanvasHovered
+                  ? "border-accent-coral/60 shadow-[0_0_40px_rgba(255,107,107,0.25),0_0_80px_rgba(255,107,107,0.1)]"
+                  : "border-glass-border"
+              }`}
+            >
+              <TldrawWrapper ref={tldrawRef} />
+            </div>
+            <AnimatePresence>
+              {isCanvasHovered && (
+                <motion.p
+                  initial={{ opacity: 0, y: 4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 4 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs text-text-muted whitespace-nowrap"
                 >
-                  <TldrawWrapper ref={tldrawRef} />
-                </div>
-                <AnimatePresence>
-                  {isCanvasHovered && (
-                    <motion.p
-                      initial={{ opacity: 0, y: 4 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 4 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs text-text-muted whitespace-nowrap"
-                    >
-                      Move cursor outside canvas to scroll
-                    </motion.p>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
+                  Move cursor outside canvas to scroll
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </div>
 
         {/* Action Buttons */}
         <motion.div
