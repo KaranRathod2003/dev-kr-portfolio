@@ -34,7 +34,10 @@ export const metadata: Metadata = {
   title: "Kr | Full-Stack Developer & Portfolio", 
   description:
     "Explore the portfolio of Kr, a Full-Stack Developer specializing in React, Node.js, and PostgreSQL. View projects, skills, and community features.",
-  
+  //verification
+  verification:{
+    google: "TUGTKsXGSsZZQ1gJ_rc1_efskTedMpRJmnMbfBs2eGA"
+  },
   // 2. Keywords (optional but helpful for some engines)
   keywords: ["Web Developer", "React Developer", "Next.js Portfolio", "Full Stack Developer", "PostgreSQL"],
 
