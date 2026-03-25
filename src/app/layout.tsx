@@ -4,8 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SessionProvider from "@/components/providers/SessionProvider";
-import GrainOverlay from "@/components/ui/GrainOverlay";
-import ScrollProgress from "@/components/ui/ScrollProgress";
+import RouteEffects from "@/components/layout/RouteEffects";
 // import image from "./public/og-image.png";
 
 const inter = Inter({
@@ -77,8 +76,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
       >
         <SessionProvider>
-          <GrainOverlay />
-          <ScrollProgress />
+          <RouteEffects />
           <Navbar />
           <main>{children}</main>
           <Footer />

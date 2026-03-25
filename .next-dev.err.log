@@ -1,0 +1,112 @@
+(node:33540) ExperimentalWarning: CommonJS module C:\Users\kr043\AppData\Roaming\npm\node_modules\npm\node_modules\debug\src\node.js is loading ES Module C:\Users\kr043\AppData\Roaming\npm\node_modules\npm\node_modules\supports-color\index.js using require().
+Support for loading ES Module in require() is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+Error: Can't resolve 'tailwindcss' in 'C:\Users\kr043'
+    [2m[at finishWithoutResolve (C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:586:18)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:678:14][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m {
+  details: "resolve 'tailwindcss' in 'C:\\Users\\kr043'\n" +
+    '  Parsed request is a module\n' +
+    '  using description file: C:\\Users\\kr043\\package.json (relative path: .)\n' +
+    '    resolve as module\n' +
+    '      looking for modules in C:\\Users\\kr043\\node_modules\n' +
+    '        single file module\n' +
+    '          using description file: C:\\Users\\kr043\\package.json (relative path: ./node_modules/tailwindcss)\n' +
+    '            no extension\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    '            .css\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss.css doesn't exist\n" +
+    "        C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    "      C:\\Users\\node_modules doesn't exist or is not a directory\n" +
+    "      C:\\node_modules doesn't exist or is not a directory"
+}
+Error: Can't resolve 'tailwindcss' in 'C:\Users\kr043'
+    [2m[at finishWithoutResolve (C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:586:18)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:678:14][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m {
+  details: "resolve 'tailwindcss' in 'C:\\Users\\kr043'\n" +
+    '  Parsed request is a module\n' +
+    '  using description file: C:\\Users\\kr043\\package.json (relative path: .)\n' +
+    '    resolve as module\n' +
+    '      looking for modules in C:\\Users\\kr043\\node_modules\n' +
+    '        single file module\n' +
+    '          using description file: C:\\Users\\kr043\\package.json (relative path: ./node_modules/tailwindcss)\n' +
+    '            no extension\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    '            .css\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss.css doesn't exist\n" +
+    "        C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    "      C:\\Users\\node_modules doesn't exist or is not a directory\n" +
+    "      C:\\node_modules doesn't exist or is not a directory"
+}
+Error: Can't resolve 'tailwindcss' in 'C:\Users\kr043'
+    [2m[at finishWithoutResolve (C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:586:18)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:678:14][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m {
+  details: "resolve 'tailwindcss' in 'C:\\Users\\kr043'\n" +
+    '  Parsed request is a module\n' +
+    '  using description file: C:\\Users\\kr043\\package.json (relative path: .)\n' +
+    '    resolve as module\n' +
+    '      looking for modules in C:\\Users\\kr043\\node_modules\n' +
+    '        single file module\n' +
+    '          using description file: C:\\Users\\kr043\\package.json (relative path: ./node_modules/tailwindcss)\n' +
+    '            no extension\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    '            .css\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss.css doesn't exist\n" +
+    "        C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    "      C:\\Users\\node_modules doesn't exist or is not a directory\n" +
+    "      C:\\node_modules doesn't exist or is not a directory"
+}
+Error: Can't resolve 'tailwindcss' in 'C:\Users\kr043'
+    [2m[at finishWithoutResolve (C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:586:18)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:678:14][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m
+    [2m[at eval (eval at create (C:\Users\kr043\poc-project\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)][0m
+    [2m[at C:\Users\kr043\poc-project\node_modules\enhanced-resolve\lib\Resolver.js:739:5][0m {
+  details: "resolve 'tailwindcss' in 'C:\\Users\\kr043'\n" +
+    '  Parsed request is a module\n' +
+    '  using description file: C:\\Users\\kr043\\package.json (relative path: .)\n' +
+    '    resolve as module\n' +
+    '      looking for modules in C:\\Users\\kr043\\node_modules\n' +
+    '        single file module\n' +
+    '          using description file: C:\\Users\\kr043\\package.json (relative path: ./node_modules/tailwindcss)\n' +
+    '            no extension\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    '            .css\n' +
+    "              C:\\Users\\kr043\\node_modules\\tailwindcss.css doesn't exist\n" +
+    "        C:\\Users\\kr043\\node_modules\\tailwindcss doesn't exist\n" +
+    "      C:\\Users\\node_modules doesn't exist or is not a directory\n" +
+    "      C:\\node_modules doesn't exist or is not a directory"
+}
+(node:28816) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28816) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+(node:28816) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.

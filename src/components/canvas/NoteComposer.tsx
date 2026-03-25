@@ -35,11 +35,20 @@ export default function NoteComposer() {
   const textEditorRef = useRef<TextEditorRef>(null);
   const tldrawRef = useRef<TldrawWrapperRef>(null);
   const [activeTab, setActiveTab] = useState<Tab>("write");
+  const [hasOpenedDrawTab, setHasOpenedDrawTab] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [saveStatus, setSaveStatus] = useState<"idle" | "success" | "error">(
     "idle"
   );
   const [isCanvasHovered, setIsCanvasHovered] = useState(false);
+
+  const handleTabChange = (tab: Tab) => {
+    if (tab === "draw") {
+      setHasOpenedDrawTab(true);
+    }
+
+    setActiveTab(tab);
+  };
 
   const handleSave = async () => {
     if (!session?.user) {
@@ -132,13 +141,13 @@ export default function NoteComposer() {
         {/* Tab Switcher */}
         <div className="flex justify-center mb-6">
           <div className="flex glass rounded-lg p-1 gap-1">
-            {[
+            {[ 
               { id: "write" as Tab, label: "Write", icon: HiOutlinePencil },
               { id: "draw" as Tab, label: "Draw", icon: HiOutlineColorSwatch },
             ].map((tab) => (
               <motion.button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
+                onClick={() => handleTabChange(tab.id)}
                 whileTap={{ scale: 0.95 }}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all ${
                   activeTab === tab.id
@@ -164,49 +173,57 @@ export default function NoteComposer() {
             }}
             transition={{ duration: 0.2 }}
             className={`max-w-3xl mx-auto ${
-              activeTab !== "write" ? "hidden" : ""
+              activeTab === "write"
+                ? "relative z-10"
+                : "absolute inset-0 invisible overflow-hidden pointer-events-none"
             }`}
+            aria-hidden={activeTab !== "write"}
           >
             <TextEditor ref={textEditorRef} />
           </motion.div>
 
-          {/* Draw tab - always mounted, hidden when inactive */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{
-              opacity: activeTab === "draw" ? 1 : 0,
-              x: activeTab === "draw" ? 0 : 20,
-            }}
-            transition={{ duration: 0.2 }}
-            className={`relative ${
-              activeTab !== "draw" ? "hidden" : ""
-            }`}
-            onMouseEnter={() => setIsCanvasHovered(true)}
-            onMouseLeave={() => setIsCanvasHovered(false)}
-          >
-            <div
-              className={`h-[500px] md:h-[600px] rounded-xl overflow-hidden border transition-all duration-300 ${
-                isCanvasHovered
-                  ? "border-accent-coral/60 shadow-[0_0_40px_rgba(255,107,107,0.25),0_0_80px_rgba(255,107,107,0.1)]"
-                  : "border-glass-border"
+          {/* Draw tab - mounted only after first open and never hidden with display:none */}
+          {hasOpenedDrawTab && (
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{
+                opacity: activeTab === "draw" ? 1 : 0,
+                x: activeTab === "draw" ? 0 : 20,
+              }}
+              transition={{ duration: 0.2 }}
+              className={`${
+                activeTab === "draw"
+                  ? "relative z-10"
+                  : "absolute inset-0 invisible overflow-hidden pointer-events-none"
               }`}
+              aria-hidden={activeTab !== "draw"}
+              onMouseEnter={() => setIsCanvasHovered(true)}
+              onMouseLeave={() => setIsCanvasHovered(false)}
             >
-              <TldrawWrapper ref={tldrawRef} />
-            </div>
-            <AnimatePresence>
-              {isCanvasHovered && (
-                <motion.p
-                  initial={{ opacity: 0, y: 4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 4 }}
-                  transition={{ duration: 0.2 }}
-                  className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs text-text-muted whitespace-nowrap"
-                >
-                  Move cursor outside canvas to scroll
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </motion.div>
+              <div
+                className={`h-[500px] md:h-[600px] rounded-xl overflow-hidden border transition-all duration-300 ${
+                  isCanvasHovered
+                    ? "border-accent-coral/60 shadow-[0_0_40px_rgba(255,107,107,0.25),0_0_80px_rgba(255,107,107,0.1)]"
+                    : "border-glass-border"
+                }`}
+              >
+                <TldrawWrapper ref={tldrawRef} />
+              </div>
+              <AnimatePresence>
+                {isCanvasHovered && activeTab === "draw" && (
+                  <motion.p
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-xs text-text-muted whitespace-nowrap"
+                  >
+                    Move cursor outside canvas to scroll
+                  </motion.p>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )}
         </div>
 
         {/* Action Buttons */}

@@ -21,6 +21,16 @@ interface NoteCardProps {
   index: number;
 }
 
+function getInitialRotation(seed: string, index: number) {
+  let hash = index;
+
+  for (let i = 0; i < seed.length; i += 1) {
+    hash = (hash * 31 + seed.charCodeAt(i)) | 0;
+  }
+
+  return (Math.abs(hash) % 5) - 2;
+}
+
 function timeAgo(dateStr: string): string {
   const seconds = Math.floor(
     (Date.now() - new Date(dateStr).getTime()) / 1000
@@ -43,6 +53,7 @@ export default function NoteCard({
   index,
 }: NoteCardProps) {
   const posRef = useRef({ x: note.boardPosition.x, y: note.boardPosition.y });
+  const initialRotation = getInitialRotation(note._id, index);
 
   const handleDragEnd = useCallback(
     (_: unknown, info: { offset: { x: number; y: number } }) => {
@@ -64,7 +75,7 @@ export default function NoteCard({
         y: note.boardPosition.y,
         opacity: 0,
         scale: 0.8,
-        rotate: -2 + Math.random() * 4,
+        rotate: initialRotation,
       }}
       animate={{
         x: note.boardPosition.x,
